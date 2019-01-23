@@ -19,10 +19,10 @@ cache:
     - $HOME/.cache/venvs
 
 env:
-  - DJANGO_SETTINGS_MODULE="{{ project_name }}.settings.dev"
+  - DJANGO_SETTINGS_MODULE="fridgenotice.settings.dev"
 
 efore_script:
-  - createdb --encoding=UTF-8 {{ project_name }} --username=postgres --owner=`whoami`
+  - createdb --encoding=UTF-8 fridgenotice --username=postgres --owner=`whoami`
 
 script:
   - coverage run manage.py test
