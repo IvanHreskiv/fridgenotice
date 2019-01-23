@@ -28,6 +28,7 @@ efore_script:
   - createdb --encoding=UTF-8 fridgenotice --username=postgres --owner=`whoami`
 
 script:
+  - source manage.py mirate
   - coverage run manage.py test
   - coverage report -m --fail-under 80
   - flake8 .
