@@ -13,6 +13,7 @@ python:
 addons:
   postgresql: "9.6"
 
+
 env:
   - DATABASE_URL="postgres://postgres:fridgenotice@127.0.0.1:5432/fridgenotice"
   - USE_DOCKER=no
