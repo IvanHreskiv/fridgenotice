@@ -1,11 +1,7 @@
 fridgenotice
 ============
 
-meal planning app
-
-.. image:: https://img.shields.io/badge/built%20with-Cookiecutter%20Django-ff69b4.svg
-     :target: https://github.com/pydanny/cookiecutter-django/
-     :alt: Built with Cookiecutter Django
+[![Build Status](https://travis-ci.org/IvanHreskiv/fridgenotice.svg?branch=master)](https://travis-ci.org/IvanHreskiv/fridgenotice)
 
 
 :License: MIT
