@@ -21,7 +21,7 @@ cache:
 env:
   - WORKON_HOME=$HOME/.cache/venvs
 
-nstall:
+install:
   - pip install -r requirements/local.txt
 
 efore_script:
