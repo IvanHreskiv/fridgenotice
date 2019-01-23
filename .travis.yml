@@ -20,7 +20,7 @@ env:
 install:
   - pip install -r requirements/local.txt
 
-efore_script:
+before_script:
   - createdb --encoding=UTF-8 fridgenotice --username=postgres --owner=`whoami`
 
 script:
