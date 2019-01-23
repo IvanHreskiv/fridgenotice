@@ -14,7 +14,7 @@ addons:
   postgresql: "10.5"
 
 env:
-  - DATABASE_URL=postgres://postgres:fridgenotice@127.0.0.1:5432/fridgenotice
+  - DATABASE_URL="postgres://postgres:fridgenotice@127.0.0.1:5432/fridgenotice"
   - USE_DOCKER=no
 
 install:
