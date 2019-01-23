@@ -19,7 +19,10 @@ cache:
     - $HOME/.cache/venvs
 
 env:
-  - DJANGO_SETTINGS_MODULE="fridgenotice.settings.dev"
+  - WORKON_HOME=$HOME/.cache/venvs
+
+nstall:
+  - pip install -r requirements/local.txt
 
 efore_script:
   - createdb --encoding=UTF-8 fridgenotice --username=postgres --owner=`whoami`
