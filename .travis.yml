@@ -21,6 +21,7 @@ cache:
 env:
   - WORKON_HOME=$HOME/.cache/venvs
   - DATABASE_URL=postgres://postgres:fridgenotice@127.0.0.1:5432/fridgenotice
+  - DATABASE_URL=no
 
 install:
   - pip install -r requirements/local.txt
