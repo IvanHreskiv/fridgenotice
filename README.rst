@@ -1,8 +1,8 @@
 fridgenotice
 ============
 
-[![Build Status](https://travis-ci.org/IvanHreskiv/fridgenotice.svg?branch=master)](https://travis-ci.org/IvanHreskiv/fridgenotice)
-
+.. image:: https://travis-ci.org/IvanHreskiv/fridgenotice.svg?branch=master
+    :target: https://travis-ci.org/IvanHreskiv/fridgenotice
 
 :License: MIT
 
