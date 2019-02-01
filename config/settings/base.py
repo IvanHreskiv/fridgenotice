@@ -70,7 +70,8 @@ THIRD_PARTY_APPS = [
 ]
 LOCAL_APPS = [
     'frigdenotice.users.apps.UsersAppConfig',
-    'meal_app',
+    'meal_app.apps.MealAppConfig',
+    # Your stuff goes here
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
