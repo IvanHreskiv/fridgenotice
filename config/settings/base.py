@@ -67,6 +67,8 @@ THIRD_PARTY_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'rest_framework',
+    'schedule',
+    'djangobower',
 ]
 LOCAL_APPS = [
     'frigdenotice.users.apps.UsersAppConfig',
@@ -150,6 +152,7 @@ STATICFILES_DIRS = [
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'djangobower.finders.BowerFinder',
 ]
 
 # MEDIA
@@ -246,5 +249,11 @@ ACCOUNT_ADAPTER = 'frigdenotice.users.adapters.AccountAdapter'
 SOCIALACCOUNT_ADAPTER = 'frigdenotice.users.adapters.SocialAccountAdapter'
 
 
-# Your stuff...
+# django-bower
 # ------------------------------------------------------------------------------
+BOWER_COMPONENTS_ROOT = str(ROOT_DIR('components'))
+BOWER_INSTALLED_APPS = (
+    'jquery',
+    'jquery-ui',
+    'bootstrap'
+)
