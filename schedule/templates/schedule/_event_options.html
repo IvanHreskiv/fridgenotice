@@ -1,0 +1,43 @@
+{% load staticfiles i18n %}
+
+<span class="actions">
+{% if edit_event %}
+  <span class="edit">
+  {% if occurrence.event.rule %}
+    {% if occurrence.id %}
+        <a href="#" onclick="openURL('{{ edit_occurrence }}?next={{ here }}', event);">
+          <span class="fas fa-pen-fancy"></span>
+        </a>
+    {% else %}
+        <a href="#" onclick="openEditDialog(this, '{{ edit_occurrence }}?next={{ here }}', '{{ edit_event }}?next={{ here }}', event);">
+          <span class="fas fa-pen-fancy"></span>
+        </a>
+    {% endif %}
+  {% else %}
+    <a href="#" onclick="openURL('{{ edit_event }}?next={{ here }}', event);">
+        <span class="fas fa-pen-fancy"></span>
+    </a>
+  {% endif %}
+  </span>
+{% endif %}
+
+{% if delete_event %}
+<span class="delete">
+  {% if occurrence.event.rule %}
+    {% if occurrence.id %}
+        <a href="#" onclick="openURL('{{cancel_occurrence}}?next={{here}}', event);">
+          <span class="fas fa-trash"></span>
+        </a>
+    {% else %}
+        <a href="#" onclick="openCancelDialog(this, '{{ cancel_occurrence }}?next={{here}}', '{{delete_event}}?next={{here}}', event);">
+          <span class="fas fa-trash"></span>
+        </a>
+    {% endif %}
+  {% else %}
+    <a href="#" onclick="openURL('{{delete_event}}?next={{here}}', event);">
+      <span class="fas fa-trash"></span>
+    </a>
+  {% endif %}
+</span>
+{% endif %}
+</span>
