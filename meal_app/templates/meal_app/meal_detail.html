@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Meal:{{ meal.name }}{% endblock %}
+
+{% block content %}
+<div class="container">
+
+  <div class="row">
+    <div class="col-sm-12">
+      <p>{{ meal.name }}</p>
+      {% if meal.detail %}
+        <p>{{ meal.detail }}</p>
+      {% endif %}
+    </div>
+  </div>
+
+
+<!-- Action buttons -->
+<div class="row">
+
+  <div class="col-sm-12">
+<!---->
+
+    <a class="btn btn-primary" href="{% url 'meals:create' %}" role="button">create</a>
+    <a class="btn btn-success" href="{% url 'meals:update' meal.id %}" role="button">edit</a>
+    <a class="btn btn-danger" href="{% url 'meals:delete' meal.id %}" role="button">delete</a>
+    <a class="btn btn-info" href="{% url 'meals:list' %}" role="button">return</a>
+
+    <!-- Your Stuff: Custom meal template urls -->
+  </div>
+
+</div>
+
+</div>
+{% endblock content %}
+

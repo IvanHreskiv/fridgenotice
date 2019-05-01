@@ -21,6 +21,7 @@ urlpatterns = [
         include("frigdenotice.users.urls", namespace="users"),
     ),
     path("accounts/", include("allauth.urls")),
+    path("", include("meal_app.urls"))
     # Your stuff: custom urls includes go here
 ] + static(
     settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
