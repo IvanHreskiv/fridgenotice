@@ -74,6 +74,7 @@ LOCAL_APPS = [
     'frigdenotice.users.apps.UsersAppConfig',
     'meal_app.apps.MealAppConfig',
     'recipe.apps.RecipeAppConfig',
+    'ingredient.apps.IngredientAppConfig',
     # Your stuff goes here
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
