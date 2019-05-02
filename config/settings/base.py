@@ -73,6 +73,7 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     'frigdenotice.users.apps.UsersAppConfig',
     'meal_app.apps.MealAppConfig',
+    'recipe.apps.RecipeAppConfig',
     # Your stuff goes here
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -172,7 +173,8 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         # https://docs.djangoproject.com/en/dev/ref/settings/#template-dirs
         'DIRS': [
-            str(APPS_DIR.path('templates')), str(ROOT_DIR.path('meal_app/templates/meal_app'))
+            str(APPS_DIR.path('templates')), str(ROOT_DIR.path('meal_app/templates/meal_app')),
+            str(ROOT_DIR.path('recipe/templates/recipe')),
         ],
         'OPTIONS': {
             # https://docs.djangoproject.com/en/dev/ref/settings/#template-debug
