@@ -1,1 +1,11 @@
 {% extends "base.html" %}
+{% block content %}
+<p>
+  This app helps you to balance your meals throughout the day,
+  create new interesting meal recipies and play your diet.
+  <br>Please navigate to your
+  <b><a href="{% url 'meals:list' %}" >meals</a></b> to see the list of meals you have.<br> You can
+  <b><a href="{% url 'meals:create' %}" >create</a></b> a new meal or delete it. Also, see
+  <b><a href="{% url 'users:detail' user.username %}" >your profile</a></b>.
+</p>
+{% endblock %}

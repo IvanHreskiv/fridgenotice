@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Meal Records</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script type="text/javascript" src="{% static "js/meal-detail.js" %}"></script>
+  <link rel="stylesheet" href="{% static 'css/meal_table.css' %}" type="text/css">
+</head>
+<body>
+  <h2 class="alignleft">My meal list</h2>
+  <table class="table table-striped table-hover table-sm">
+  {% if meal_list|length == 0 %}
+    <p>You don't have any items in this list. Add a new meal to see it in the list</p>
+  {% else %}
+    <thead class="thead-dark">
+      <tr>
+          <th></th>
+          <th>Name</th>
+          <th>Details</th>
+          <th>Created at</th>
+          <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for meal in meal_list %}
+      <tr>
+        <td style="width: 100px;">ID {{ meal.id }}</td>
+        <td style="width: 200px;">
+          <a class="nav-link" href="/meals/{{meal.name}}">{{ meal.name }}</a>
+        </td>
+        <td><div id="meal-detail" contenteditable="true">{{ meal.detail }}</div></td>
+        <td style="width: 180px;">{{ meal.date_field|date:"D d M Y" }}</td>
+        <td style="width: 180px;"><a href="/meals/update/{{ meal.id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>
+        <a href="/meals/delete/{{ meal.id }}">Delete</a></td>
+      </tr>
+    {% endfor %}
+  {% endif %}
+  </tbody>
+</table>
+<br>
+<br>
+<a href="{% url 'meals:create' %}" class="btn btn-info">add a meal</a>
+</body>
+</html>
+
+{% endblock %}
