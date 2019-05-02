@@ -14,8 +14,4 @@ urlpatterns = (
     path(f'create/', view=meal_create_view, name='create'),
     path(f'{app_name}/delete/<int:pk>', view=meal_delete_view, name='delete'),
     path(f'{app_name}/update/<int:pk>', view=meal_update_view, name='update'),
-
-
-
 )
-
