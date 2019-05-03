@@ -32,7 +32,7 @@
       <tr>
         <td style="width: 100px;">ID {{ meal.id }}</td>
         <td style="width: 200px;">
-          <a class="nav-link" href="/meals/{{meal.name}}">{{ meal.name }}</a>
+          <a class="nav-link" href="/meals/details/{{meal.name}}">{{ meal.name }}</a>
         </td>
         <td><div id="meal-detail" contenteditable="true">{{ meal.detail }}</div></td>
         <td style="width: 180px;">{{ meal.date_field|date:"D d M Y" }}</td>

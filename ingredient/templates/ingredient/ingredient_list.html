@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ingredient Records</title>
+  <link rel="stylesheet" href="{% static 'css/ingredient_table.css' %}" type="text/css">
+</head>
+<body>
+  <h2 class="alignleft">My ingredient list</h2>
+  <table class="table table-striped table-hover table-sm">
+  {% if ingredient_list|length == 0 %}
+    <p>You don't have any items in this list. Add a new ingredient to see it in the list</p>
+  {% else %}
+    <thead class="thead-dark">
+      <tr>
+          <th></th>
+          <th>Name</th>
+          <th>Calories</th>
+          <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for ingredient in ingredient_list %}
+      <tr>
+        <td style="width: 100px;">ID {{ ingredient.id }}</td>
+        <td style="width: 200px;">
+          <a class="nav-link" href="/ingredients/details/{{ingredient.name}}">{{ ingredient.name }}</a>
+        </td>
+        <td><div>{{ ingredient.calories }}</div></td>
+        <td style="width: 180px;"><a href="/ingredients/update/{{ ingredient.id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>
+        <a href="/ingredients/delete/{{ ingredient.id }}">Delete</a></td>
+      </tr>
+    {% endfor %}
+  {% endif %}
+  </tbody>
+</table>
+<br>
+<br>
+<a href="{% url 'ingredients:create' %}" class="btn btn-info">add an ingredient</a>
+</body>
+</html>
+
+{% endblock %}

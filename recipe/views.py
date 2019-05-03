@@ -24,7 +24,7 @@ class RecipeDetailView(LoginRequiredMixin, DetailView):
     slug_url_kwarg = "name"
 
 
-recipe_detail = RecipeDetailView.as_view()
+recipe_detail_view = RecipeDetailView.as_view()
 
 
 class RecipeDeleteView(LoginRequiredMixin, DeleteView):

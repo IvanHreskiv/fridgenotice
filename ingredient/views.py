@@ -38,7 +38,7 @@ ingredient_delete_view = IngredientDeleteView.as_view()
 
 class IngredientCreateView(LoginRequiredMixin, CreateView):
 
-    fields = ['name', 'calorie']
+    fields = ['name', 'calories']
     model = Ingredient
     success_url = reverse_lazy('ingredients:list')
 
@@ -49,7 +49,7 @@ ingredient_create_view = IngredientCreateView.as_view()
 class IngredientUpdateView(LoginRequiredMixin, UpdateView):
 
     model = Ingredient
-    fields = ['name', 'calorie']
+    fields = ['name', 'calories']
     success_url = reverse_lazy('ingredients:list')
 
 
