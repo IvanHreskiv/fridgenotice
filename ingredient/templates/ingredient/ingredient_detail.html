@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Ingredient:{{ ingredient.name }}{% endblock %}
+
+{% block content %}
+<div class="container">
+
+  <div class="row">
+    <div class="col-sm-12">
+      <p>{{ ingredient.name }}</p>
+      <p>{{ ingredient.calories }}</p>
+    </div>
+  </div>
+
+
+<!-- Action buttons -->
+<div class="row">
+
+  <div class="col-sm-12">
+<!---->
+
+    <a class="btn btn-primary" href="{% url 'ingredients:create' %}" role="button">create</a>
+    <a class="btn btn-success" href="{% url 'ingredients:update' ingredient.id %}" role="button">edit</a>
+    <a class="btn btn-danger" href="{% url 'ingredients:delete' ingredient.id %}" role="button">delete</a>
+    <a class="btn btn-info" href="{% url 'ingredients:list' %}" role="button">return</a>
+
+    <!-- Your Stuff: Custom recipe template urls -->
+  </div>
+
+</div>
+
+</div>
+{% endblock content %}
+

@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Recipe Records</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script type="text/javascript" src="{% static "js/recipe-detail.js" %}"></script>
+  <link rel="stylesheet" href="{% static 'css/recipe_table.css' %}" type="text/css">
+</head>
+<body>
+  <h2 class="alignleft">My recipe list</h2>
+  <table class="table table-striped table-hover table-sm" width=50%>
+  {% if recipe_list|length == 0 %}
+    <p>You don't have any items in this list. Add a new recipe to see it in the list</p>
+  {% else %}
+    <thead class="thead-dark">
+      <tr>
+          <th></th>
+          <th>Name</th>
+          <th>Details</th>
+          <th>Created at</th>
+          <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for recipe in recipe_list %}
+      <tr>
+        <td style="width: 100px;">ID {{ recipe.id }}</td>
+        <td style="width: 200px;">
+          <a class="nav-link" href="/recipes/details/{{recipe.name}}">{{ recipe.name }}</a>
+        </td>
+        <td><div id="recipe-detail" contenteditable="true">{{ recipe.detail }}</div></td>
+        <td style="width: 180px;">{{ recipe.date_field|date:"D d M Y" }}</td>
+        <td style="width: 180px;"><a href="/recipes/update/{{ recipe.id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>
+        <a href="/recipes/delete/{{ recipe.id }}">Delete</a></td>
+      </tr>
+    {% endfor %}
+  {% endif %}
+  </tbody>
+</table>
+<br>
+<br>
+<a href="{% url 'recipes:create' %}" class="btn btn-info">add a recipe</a>
+</body>
+</html>
+
+{% endblock %}
